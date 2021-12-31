@@ -7,6 +7,7 @@ import IdeiasScreen from "./components/IdeiasScreen";
 import PerguntaScreen from "./components/PerguntaScreen";
 import {
   BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route,
   Redirect
@@ -14,7 +15,7 @@ import {
 
 export default function App() {
   return (
-    <Router>
+    <HashRouter basename="/">
       <div>
         <Navbar />
         <Switch>
@@ -24,6 +25,6 @@ export default function App() {
           <Route exact path="*" render={() => <h2>Rota não encontrada!</h2>} />
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
